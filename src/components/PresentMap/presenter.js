@@ -8,12 +8,23 @@ import _ from 'lodash';
 class PresentMap extends Component {
   render() {
     return (<MarkerMap
-        containerElement={
-          <div style={{ height: `100%` }} />
-        }
-        mapElement={
-          <div style={{ height: `100%` }} />
-        }
+      containerElement={
+                 <div style={{    position: 'absolute',
+                     top: 0,
+                     left: 0,
+                     right: 0,
+                     bottom: 0,
+                     justifyContent: 'flex-end',
+                     alignItems: 'center',}} />
+             }
+             mapElement={
+                 <div style={{    position: 'absolute',
+                     top: 0,
+                     left: 0,
+                     right: 0,
+                     bottom: 0,
+                }} />
+             }
         onMapLoad={_.noop}
         onMapClick={_.noop}
         onMarkerRightClick={_.noop}
