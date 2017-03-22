@@ -5,12 +5,14 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions';
 
 function mapStateToProps(state) {
-  return {}
+  return {
+
+  }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-
+    
   };
 }
 

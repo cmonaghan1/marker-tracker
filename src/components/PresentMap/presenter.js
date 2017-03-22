@@ -6,6 +6,16 @@ import _ from 'lodash';
 // Wrap all `react-google-maps` components with `withGoogleMap` HOC
 // and name it GettingStartedGoogleMap
 class PresentMap extends Component {
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        var initialPosition = JSON.stringify(position);
+        console.log(position);
+      }
+    )
+  }
+
   render() {
     return (<MarkerMap
       containerElement={
