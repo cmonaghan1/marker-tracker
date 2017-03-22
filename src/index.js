@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import MapMarker from './components/MapMarker';
+import PresentMap from './components/PresentMap';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from './stores/configureStore';
@@ -24,8 +24,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={MapMarker} />
-        <Route path="/" component={MapMarker} />
+        <IndexRoute component={PresentMap} />
+        <Route path="/" component={PresentMap} />
       </Route>
     </Router>
   </Provider>,
