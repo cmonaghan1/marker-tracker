@@ -3,21 +3,22 @@ import ReactDOM from 'react-dom';
 import MarkerMap from '../MarkerMap';
 import _ from 'lodash';
 
-// Wrap all `react-google-maps` components with `withGoogleMap` HOC
-// and name it GettingStartedGoogleMap
 class PresentMap extends Component {
 
   componentDidMount() {
+    const { onSetPosition } = this.props;
     navigator.geolocation.getCurrentPosition(
       (position) => {
         var initialPosition = JSON.stringify(position);
-        console.log(position);
+        onSetPosition(position.coords);
       }
     )
   }
 
   render() {
-    return (<MarkerMap
+    const { position } = this.props;
+    return (<div>
+      {position ? <MarkerMap
       containerElement={
                  <div style={{    position: 'absolute',
                      top: 0,
@@ -38,7 +39,10 @@ class PresentMap extends Component {
         onMapLoad={_.noop}
         onMapClick={_.noop}
         onMarkerRightClick={_.noop}
-      />
+        latitude={position.latitude}
+        longitude={position.longitude}
+      /> : null}
+      </div>
     );
   }
 }
