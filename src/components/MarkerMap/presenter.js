@@ -12,6 +12,12 @@ const MarkerMap = withGoogleMap(props => (
     defaultCenter={{ lat: props.latitude, lng: props.longitude }}
     onClick={props.onMapClick}
   >
+    {props.markers.map(marker => (
+      <Marker
+        {...marker}
+        onRightClick={() => props.onMarkerRightClick(marker)}
+      />
+    ))}
   </GoogleMap>
 ));
 

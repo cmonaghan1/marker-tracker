@@ -6,7 +6,7 @@ import * as actions from '../../actions';
 
 function mapStateToProps(state) {
   return {
-
+    markers: state.markers
   }
 }
 

@@ -10,7 +10,11 @@ function setMarker(marker) {
 
 export function addMarker(marker) {
   return function(dispatch) {
-    dispatch(setMarker({ lat: 123, lon: 456 }));
+    dispatch(setMarker({
+        position: marker.latLng,
+        defaultAnimation: 3,
+        key: Date.now(), // Add a key property for: http://fb.me/react-warning-keys
+      }));
   }
 }
 

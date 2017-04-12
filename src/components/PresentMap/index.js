@@ -6,13 +6,15 @@ import * as actions from '../../actions';
 
 function mapStateToProps(state) {
   return {
-    position: state.position.position
+    position: state.position.position,
+    markers: state.markers
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onSetPosition: bindActionCreators(actions.onPosition, dispatch)
+    onSetPosition: bindActionCreators(actions.onPosition, dispatch),
+    onSetMarker: bindActionCreators(actions.addMarker, dispatch)
   };
 }
 

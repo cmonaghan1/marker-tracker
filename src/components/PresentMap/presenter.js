@@ -17,6 +17,8 @@ class PresentMap extends Component {
 
   render() {
     const { position } = this.props;
+    const { onSetMarker } = this.props;
+    const { markers } = this.props;
     return (<div>
       {position ? <MarkerMap
       containerElement={
@@ -37,8 +39,9 @@ class PresentMap extends Component {
                 }} />
              }
         onMapLoad={_.noop}
-        onMapClick={_.noop}
+        onMapClick={onSetMarker}
         onMarkerRightClick={_.noop}
+        markers={markers}
         latitude={position.latitude}
         longitude={position.longitude}
       /> : null}
