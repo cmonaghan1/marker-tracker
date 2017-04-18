@@ -19,6 +19,9 @@ class PresentMap extends Component {
     const { position } = this.props;
     const { onSetMarker } = this.props;
     const { markers } = this.props;
+    const { infoWindow } = this.props;
+    const { toggleInfo } = this.props;
+
     return (<div>
       {position ? <MarkerMap
       containerElement={
@@ -40,10 +43,11 @@ class PresentMap extends Component {
              }
         onMapLoad={_.noop}
         onMapClick={onSetMarker}
-        onMarkerRightClick={_.noop}
+        onMarkerClick={toggleInfo}
         markers={markers}
         latitude={position.latitude}
         longitude={position.longitude}
+        infoWindow={infoWindow}
       /> : null}
       </div>
     );

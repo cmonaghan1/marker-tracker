@@ -7,14 +7,16 @@ import * as actions from '../../actions';
 function mapStateToProps(state) {
   return {
     position: state.position.position,
-    markers: state.markers
+    markers: state.markers,
+    infoWindow: state.info
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     onSetPosition: bindActionCreators(actions.onPosition, dispatch),
-    onSetMarker: bindActionCreators(actions.addMarker, dispatch)
+    onSetMarker: bindActionCreators(actions.addMarker, dispatch),
+    toggleInfo: bindActionCreators(actions.toggleInfo, dispatch)
   };
 }
 
